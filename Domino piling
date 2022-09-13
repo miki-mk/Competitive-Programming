@@ -1,0 +1,6 @@
+num = str(input("num : "))
+m,n = num.split()
+m = int(m)
+n = int(n)
+assert (1<=m and m<=n and n<=16),"1 < M < N <16"
+print(m * n // 2)
