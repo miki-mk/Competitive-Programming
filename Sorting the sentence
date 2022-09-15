@@ -1,0 +1,12 @@
+class Solution:
+    def sortSentence(self, s: str) -> str:
+        s = s.split()
+        stri = [0]*len(s)
+        for string in s:
+            for j in range(len(string)):
+                if string[j].isnumeric():
+                    index = int(string[j])-1
+                    a = string.rstrip(string[j])
+                    stri[index] = a
+                    
+        return (" ".join(stri))
