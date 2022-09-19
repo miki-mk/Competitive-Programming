@@ -1,0 +1,26 @@
+def countingValleys(steps, path):
+    # Write your code here
+    num_of_valley = 0
+    s = 0
+    a = 0
+    for step in path:
+        if step == "U":
+            s += 1
+        else:
+            s -= 1
+        if s == 0 and a<0:
+            num_of_valley +=1
+        a = s
+    return num_of_valley
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    steps = int(input().strip())
+
+    path = input()
+
+    result = countingValleys(steps, path)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
