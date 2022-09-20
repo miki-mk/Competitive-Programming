@@ -1,0 +1,7 @@
+    import math
+    n,m,a  = list(map(int, input(). split()))
+    def square(n,m,a):
+        h = math.ceil(n/a)
+        k = math.ceil(m/a)
+        return h*k
+    print(square(n,m,a))
