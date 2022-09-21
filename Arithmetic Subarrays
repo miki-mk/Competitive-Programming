@@ -1,0 +1,14 @@
+class Solution:
+    def checkArithmeticSubarrays(self, nums: List[int], l: List[int], r: List[int]) -> List[bool]:
+        y = []
+        for i in range(len(r)):
+            query = nums[l[i]:r[i]+1]
+            query.sort()
+            d = query[-1] - query[-2]
+            for i in range(len(query) - 2, 0, -1):
+                if (query[i] - query[i-1]) != d:
+                    y.append(False)
+                    break
+            else:
+                y.append(True)
+        return y
